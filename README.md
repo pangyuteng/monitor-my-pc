@@ -13,7 +13,15 @@ you can try `monitor-my-pc`.
 ## monitor your pc remotely with ngrok
 
 ```
+
+#create `.env` file to specify `AUTHTOKEN=****` for ngrok.
+
+# up the services
 docker-compose up -d
+
+# from the log get link to remote monitor your pc.
+docker logs -f monitor-my-pc_ngrok_1
+
 ```
 
 # sample web ui
