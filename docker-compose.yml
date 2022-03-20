@@ -1,0 +1,32 @@
+version: '3'
+services:
+    ngrok:
+        image: ngrok
+        build:
+            context: ./ngrok
+            dockerfile: Dockerfile        
+        links:
+            - flask
+        command: ngrok http flask:5000 --authtoken $AUTHTOKEN --log stdout        
+        restart: always
+    flask:
+        build:
+            context: ./flask
+            dockerfile: Dockerfile
+        image: flask
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                        - capabilities: [gpu]
+        ports:
+            - 5000:5000
+        restart: always
+        command: python app.py
+        volumes:
+            - $PWD/flask:/opt
+        healthcheck:
+            test: curl -f http://localhost:5000/poing || exit 1
+            interval: 30s
+            timeout: 10s
+            retries: 3

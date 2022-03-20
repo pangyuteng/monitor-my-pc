@@ -1,0 +1,42 @@
+
+<html>
+    <style>
+    body {
+        background-color: rgb(48, 10, 36);
+        color: rgb(246, 234, 210);
+        font-family: "Ubuntu Mono"; 
+        font-size: 16px;
+    }
+    .h5 {
+        font-family: "Ubuntu Mono"; 
+        font-size: 16px;
+    }
+    hr {
+        height:2px;
+        border-width:0;
+        color:rgb(246, 234, 210);
+        background-color:rgb(246, 234, 210);
+    }
+    </style>
+    <script>
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Mono" />
+    </script>
+    <head></head>
+    <body>
+    
+    {% for key,output in mydict.items() %}
+    <hr>
+    <div>
+    <pre>
+    {{ key }}
+    
+        {{ output }}
+    </pre>    
+    </div>
+    
+    {% endfor %}
+        
+    </body>
+    </html>
+    
+    
