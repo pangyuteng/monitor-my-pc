@@ -1,16 +1,16 @@
-# monitor-my-pc
+## monitor-my-pc (remote monitor gpu cpu stats)
 
 ```
 just had the urge to create this.
 
 sometime you ngrok tensorboard when you go grocery shopping
-but also wants to check basic pc stats...
+but also wants to check you pc stats...
 you should probably use nagios, but if you are too lazy to setup nagios
 you should give `monitor-my-pc` a try.
 
 ```
 
-## monitor your pc remotely with ngrok
+## remote monitor your gpu and pc remotely with ngrok
 
 ```
 # create `.env` file to specify `AUTHTOKEN=****` for ngrok.
